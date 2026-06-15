@@ -6,3 +6,4 @@ package-lock.json
 .claude/settings.local.json
 modules/*/research/
 .gstack/
+tmp/
