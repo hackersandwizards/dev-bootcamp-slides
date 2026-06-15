@@ -5,3 +5,5 @@ package-lock.json
 .DS_Store
 .claude/settings.local.json
 modules/*/research/
+.gstack/
+tmp/

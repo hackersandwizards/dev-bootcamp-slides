@@ -13,5 +13,5 @@ The "so what" turn of the bootcamp. A 25-minute message talk, theory only, no de
 
 ## Materials
 
-- Deck: message-talk slides, one idea per slide, h&w theme. No demo, no live walkthrough. Full outline and speaker script in `talk-outline.md`.
-- `exercises/`: discussion guides and worksheets for the pod block.
+- Deck: TS format (Vite + React), 15 slides in `src/slides.tsx`, built on the keynote's kit for a matching look. One idea per slide, no demo. Run it: `bun run --cwd modules/hycle dev`. Full outline and speaker script in `talk-outline.md`.
+- `exercises/`: none of its own. Pod Block 4 is owned by Nermin & Stefan; the material is Nermin's handout. See [exercises/README.md](exercises/README.md).

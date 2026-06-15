@@ -1,7 +1,9 @@
-# Exercises: cycle
+# Pod Block 4 exercises
 
-One folder per task. This block is discussion-heavy, so most materials are worksheets and discussion guides rather than code.
+This module has no exercises of its own. The hycle slot (Andreas, 14:00) is a 25-minute message talk that hands off into Pod Block 4.
 
-Planned scope from the agenda: what changes for roles, teams, and process when execution becomes instant.
+Pod Block 4 - cycle (14:30-16:00) is owned by Nermin and Stefan. Its material is Nermin's handout "Zoom Out: The Human System Your Factory Depends On" (terrain mapping, then mapping who can veto, slow, or kill the factory, plus a new role that owns whether the factory builds the right thing). That handout is Nermin's and is not maintained in this repo.
+
+The talk hands directly into it. See the handoff design in [../talk-outline.md](../talk-outline.md).
 
 Format and facilitation expectations: [FACILITATION.md](../../../FACILITATION.md).
