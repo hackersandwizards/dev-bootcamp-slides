@@ -12,7 +12,7 @@ Status values: `todo`, `in progress`, `review`, `done`.
 | `foundation` | Intro to the Foundation - skills, hooks and rules (Day 1, 11:00) + Pod Block 1 - Foundations: build your factory's foundation (Day 1, 11:30) | Talk deck + pod exercises | Talk: Stefan? Exercises: TBD | todo |
 | `pipeline` | Intro to the Pipeline — RPI, planning, sub-agents, fast feedback, determinism (Day 1, 14:00) + Pod block 2 — Pipeline: wire your factory's pipeline (Day 1, 14:30) | Talk deck + pod exercises | Talk: Malte? Exercises: TBD | todo |
 | `factory-retro` | Retrospective for your AI Factory (Day 2, 09:00) + Pod block 3 - Evals & optimization (Day 2, 10:00) | Talk deck + eval exercises | Tereza | todo |
-| `hycle` | Live walkthrough: hycle in action (Day 2, 14:00) + Pod block 4 - cycle (Day 2, 14:30) | Thin deck, demo fallback, discussion guides | Talk: Andreas. Pod: Nermin & Stefan | todo |
+| `hycle` | Live walkthrough: hycle in action (Day 2, 14:00) + Pod block 4 - cycle (Day 2, 14:30) | Message talk deck (theory, no demo), pod discussion guides | Talk: Andreas. Pod: Nermin & Stefan | in progress (full outline + speaker script in `talk-outline.md`; slides todo. Slot is now a message talk, not a walkthrough — agenda title needs updating) |
 | `agenda` | Customer reports (Day 1, 16:30), Cross-pod show & tell (Day 2, 12:00), Reflect & Commit (Day 2, 16:15), Closing & Group Photo (Day 2, 17:00) | Glue deck (intros, framing, closing), reflection worksheet, 90-day rollout template, collect guest decks | Stefan (customer reports), rest TBD | todo |
 
 ## Open questions against the agenda
