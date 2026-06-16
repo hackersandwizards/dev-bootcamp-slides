@@ -660,8 +660,16 @@ body {
 }
 
 .blockplan-t {
-  min-width: 84px;
+  min-width: 56px;
   color: var(--primary);
+}
+
+.blockplan-dur {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--muted);
+  white-space: nowrap;
+  margin-left: 10px;
 }
 
 .blockplan .ex-n {
