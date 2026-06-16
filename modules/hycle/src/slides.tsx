@@ -110,7 +110,7 @@ export const slides: SlideDef[] = [
         tone: 'amber',
         label: 'The ability to act',
         title: 'Agency',
-        text: 'Germans call it Handlungsfähigkeit: competence, authority, and information in the same place.',
+        text: 'Handlungsfähigkeit: competence, authority, and information together. Only those who know can decide — so knowledge sharing and failure culture are structural, not cultural.',
       },
     ]}
     footer="When execution was slow, you never noticed these were the real bottleneck. Now building is instant, and the slow decision is exposed."
@@ -183,6 +183,14 @@ export const slides: SlideDef[] = [
     These are the same future.
   </Statement>,
 
+  /* 8.5 — the upside: what becomes possible */
+  <Statement
+    eyebrow="If you get the org right"
+    sub="Half-finished MVPs that solve nothing. Solutions that were too expensive to build. Customer problems that stayed unsolved for years because the economics did not work. All of that changes. You can finally solve them. That is what this unlocks."
+  >
+    We can build real solutions.
+  </Statement>,
+
   /* 9 — what changes divider */
   <Section kicker="What actually changes" title="Three shifts. None of them technical." />,
 
@@ -199,7 +207,7 @@ export const slides: SlideDef[] = [
           },
           {
             text: 'Push agency down, inside a frame',
-            hint: 'Competence, authority, information where the work happens. The frame is strategy: what you will and will not do.',
+            hint: 'Information (only those who know can decide), Strategy (the frame that prevents chaos at speed), Decision Architecture (what replaces Scrum\'s gates). All three live in the team.',
           },
           {
             text: 'The roles blur',
@@ -242,9 +250,9 @@ export const slides: SlideDef[] = [
       },
       {
         tone: 'amber',
-        label: 'Not yours alone',
-        title: 'Authority',
-        text: 'You cannot refactor who is allowed to decide from inside your team. That takes uncomfortable conversations with people who are not in this room.',
+        label: 'Org-level conversations',
+        title: 'Strategy & Authority',
+        text: 'You can redesign your team\'s decision architecture (move discovery from PM to team). You cannot change the org\'s authority structure or strategy from inside your team. That takes conversations with people above you.',
       },
     ]}
     footer="The frustration when a good idea dies in an approval queue is not noise. It is data. It points at the structure that has to change."
@@ -255,8 +263,8 @@ export const slides: SlideDef[] = [
     eyebrow="Where this comes from"
     sub={
       <>
-        An open inquiry into what happens when execution stops being the hard part. Written as hypotheses, not
-        answers. Come argue with us at <Accent>hycle.org</Accent>.
+        Work in progress. We are learning what's working for different orgs, what isn't, and why. Not a blueprint
+        to copy. Come help us figure out what works for <Accent>you</Accent>. <Accent>hycle.org</Accent>.
       </>
     }
   >
