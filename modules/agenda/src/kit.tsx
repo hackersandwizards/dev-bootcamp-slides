@@ -551,8 +551,9 @@ export function Outputs({
 
 /* per-block exercise plan: eyebrow + title + optional subtitle, then a timed
  * agenda in one or two columns, with an optional footer note. Each row is a
- * time/label on the mono rail plus a session, with an optional chip. */
-export type PlanRow = { t: string; s: ReactNode; chip?: string; tone?: 'teal' | 'amber' | 'plain' }
+ * start time/label on the mono rail, a session, an optional duration on the
+ * right, and an optional chip. */
+export type PlanRow = { t: string; s: ReactNode; dur?: string; chip?: string; tone?: 'teal' | 'amber' | 'plain' }
 export type PlanColumn = { kicker: string; heading?: string; rows: PlanRow[] }
 
 export function BlockPlan({
@@ -583,6 +584,7 @@ export function BlockPlan({
                 <div key={i} className="agenda-row">
                   <span className="agenda-t blockplan-t">{r.t}</span>
                   <span className="agenda-s">{r.s}</span>
+                  {r.dur && <span className="blockplan-dur">{r.dur}</span>}
                   {r.chip && <span className={`chip chip-${r.tone ?? 'plain'}`}>{r.chip}</span>}
                 </div>
               ))}
