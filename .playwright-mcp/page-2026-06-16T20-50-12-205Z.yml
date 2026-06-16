@@ -1,0 +1,557 @@
+- generic [ref=e2]:
+  - iframe
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - link "Lenny's Newsletter" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img "Lenny's Newsletter" [ref=e13]
+      - heading "Lenny's Newsletter" [level=1] [ref=e15]:
+        - link "Lenny's Newsletter" [ref=e16] [cursor=pointer]:
+          - /url: /
+          - img "Lenny's Newsletter" [ref=e17]
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - button "Search" [ref=e23] [cursor=pointer]:
+            - img [ref=e24]
+          - button "Share Publication" [ref=e27] [cursor=pointer]:
+            - img [ref=e28]
+        - button "Subscribe" [ref=e31] [cursor=pointer]
+        - button "Sign in" [ref=e32] [cursor=pointer]
+    - main "Post" [ref=e35]:
+      - article [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - generic [ref=e50]:
+                - link "Lenny's Newsletter" [ref=e51] [cursor=pointer]:
+                  - /url: https://www.lennysnewsletter.com
+                  - img "Lenny's Newsletter" [ref=e52]
+                - generic [ref=e53]:
+                  - generic [ref=e54]: "Lenny's Podcast: Product | Career | Growth"
+                  - generic [ref=e55]: Why cultivating agency matters more than cultivating skills in the AI era | Max Schoening (Head of Product, Notion)
+              - generic [ref=e57]:
+                - generic [ref=e58] [cursor=pointer]:
+                  - button "Like (133)":
+                    - img:
+                      - generic:
+                        - img
+                    - generic: "133"
+                - button "View comments (0)" [ref=e59] [cursor=pointer]:
+                  - img [ref=e60]:
+                    - img [ref=e62]
+                - button "9" [ref=e64] [cursor=pointer]:
+                  - img [ref=e65]
+                  - generic [ref=e68]: "9"
+                - button [ref=e69] [cursor=pointer]:
+                  - img [ref=e70]
+            - generic [ref=e74]:
+              - button "Change playback speed. Current speed is 1 times" [ref=e75]:
+                - generic [ref=e76] [cursor=pointer]: 1×
+              - generic [ref=e77]:
+                - button "Skip backward 15 seconds" [ref=e78] [cursor=pointer]:
+                  - img [ref=e79]
+                - button "Play" [ref=e82] [cursor=pointer]:
+                  - img [ref=e83]
+                - button "Skip forward 30 seconds" [ref=e86] [cursor=pointer]:
+                  - img [ref=e87]
+              - button "More options" [ref=e91] [cursor=pointer]:
+                - img "More options" [ref=e92]
+            - generic [ref=e96]:
+              - generic [ref=e98]: Preview
+              - generic [ref=e99]:
+                - generic [ref=e100]: 0:00
+                - slider "Seek progress" [ref=e101] [cursor=pointer]:
+                  - generic [ref=e102]: "Current time: 0:00 / Total time: -1:27:22"
+                - generic [ref=e105]: "-1:27:22"
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - generic [ref=e109]:
+                - generic [ref=e110]:
+                  - heading "Why cultivating agency matters more than cultivating skills in the AI era | Max Schoening (Head of Product, Notion)" [level=2] [ref=e111]
+                  - generic [ref=e112]: Notion’s design and product lead on why agency beats skills in the AI era, why vibe coding made more software but not better software, and how Notion ships with “drive it like it’s stolen”
+                - generic [ref=e113]:
+                  - link "View Lenny Rachitsky's profile" [ref=e118] [cursor=pointer]:
+                    - /url: https://substack.com/@lenny
+                    - generic "Lenny Rachitsky" [ref=e120]:
+                      - img "Lenny Rachitsky's avatar" [ref=e122]
+                  - generic [ref=e123]:
+                    - link "Lenny Rachitsky" [ref=e126] [cursor=pointer]:
+                      - /url: https://substack.com/@lenny
+                    - generic [ref=e127]:
+                      - generic [ref=e128]: May 03, 2026
+                      - generic [ref=e129]: ∙ Paid
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - button "Like (133)" [ref=e133] [cursor=pointer]:
+                      - img [ref=e134]:
+                        - img [ref=e136]
+                      - generic [ref=e138]: "133"
+                    - button "View comments (0)" [ref=e139] [cursor=pointer]:
+                      - img [ref=e140]:
+                        - img [ref=e142]
+                    - button "9" [ref=e144] [cursor=pointer]:
+                      - img [ref=e145]
+                      - generic [ref=e148]: "9"
+                  - generic [ref=e149]:
+                    - button "Share" [ref=e150] [cursor=pointer]:
+                      - generic [ref=e151]: Share
+                    - button "Transcript" [ref=e152] [cursor=pointer]:
+                      - img [ref=e153]
+                      - generic [ref=e154]: Transcript
+              - generic [ref=e156]:
+                - generic [ref=e159]:
+                  - figure [ref=e161]:
+                    - link [ref=e162]:
+                      - /url: https://youtu.be/mCO-D3pkviM
+                      - generic [ref=e166]:
+                        - button [ref=e167] [cursor=pointer]:
+                          - img [ref=e168]
+                        - button [ref=e170] [cursor=pointer]:
+                          - img [ref=e171]
+                  - paragraph [ref=e172]:
+                    - strong [ref=e173]: Max Schoening
+                    - text: is head of product at Notion, where he’s been especially effective at getting designers and PMs to ship code, prototype in the terminal, and launch extremely successful AI products. He was previously a PM at Google, ran design at Heroku, was VP of Design (and a part-time engineer) at GitHub, and is a two-time founder. He’s one of the most AI-forward product leaders out there and one of the deepest thinkers on how AI changes how we build and use software.
+                  - paragraph [ref=e175]:
+                    - strong [ref=e176]:
+                      - text: Listen on
+                      - link "YouTube" [ref=e177] [cursor=pointer]:
+                        - /url: https://youtu.be/mCO-D3pkviM
+                      - text: ","
+                      - link "Spotify" [ref=e178] [cursor=pointer]:
+                        - /url: https://open.spotify.com/show/2dR1MUZEHCOnz1LVfNac0j
+                      - text: ", and"
+                      - link "Apple Podcasts" [ref=e179] [cursor=pointer]:
+                        - /url: https://podcasts.apple.com/us/podcast/why-cultivating-agency-matters-more-than-cultivating/id1627920305?i=1000765889270
+                  - 'heading "We discuss: Link" [level=3] [ref=e180]':
+                    - text: "We discuss:"
+                    - button "Link" [ref=e183] [cursor=pointer]:
+                      - img [ref=e184]
+                  - list [ref=e187]:
+                    - listitem [ref=e188]:
+                      - paragraph [ref=e189]: What’s most worked in getting designers and PMs to embrace AI
+                    - listitem [ref=e190]:
+                      - paragraph [ref=e191]: Why agency—not skills—is the thing that separates people who thrive from those who fall behind
+                    - listitem [ref=e192]:
+                      - paragraph [ref=e193]: How the first 10% of every project is now “free,” and what that means for product development
+                    - listitem [ref=e194]:
+                      - paragraph [ref=e195]: "Max’s “tiny core” theory of great products: iPhone multitouch, the GitHub pull request, Notion blocks, Dropbox’s menu bar icon"
+                    - listitem [ref=e196]:
+                      - paragraph [ref=e197]: Why the SaaSpocalypse is overstated
+                    - listitem [ref=e198]:
+                      - paragraph [ref=e199]: Why the amount of software has exploded but the quality hasn’t, and why that gap creates opportunity
+                  - separator [ref=e201]
+                  - generic [ref=e202]:
+                    - heading "Brought to you by:" [level=3] [ref=e203]
+                    - figure [ref=e205]:
+                      - link [ref=e206] [cursor=pointer]:
+                        - /url: https://substackcdn.com/image/fetch/$s_!5HV4!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa427b9f9-7c95-4bd6-912f-16040e3676e8_1974x248.png
+                    - paragraph [ref=e209]:
+                      - strong [ref=e210]:
+                        - link "WorkOS" [ref=e211] [cursor=pointer]:
+                          - /url: https://workos.com/lenny
+                      - text: —Make your app Enterprise Ready, with SSO, SCIM, RBAC, and more
+                    - paragraph [ref=e212]:
+                      - strong [ref=e213]:
+                        - link "Vanta" [ref=e214] [cursor=pointer]:
+                          - /url: https://vanta.com/lenny
+                      - text: —Automate compliance, manage risk, and accelerate trust with AI
+                  - paragraph
+                  - 'heading "Where to find Max Schoening: Link" [level=3] [ref=e215]':
+                    - text: "Where to find Max Schoening:"
+                    - button "Link" [ref=e218] [cursor=pointer]:
+                      - img [ref=e219]
+                  - paragraph [ref=e222]:
+                    - text: "• X:"
+                    - link "https://x.com/mschoening" [ref=e223] [cursor=pointer]:
+                      - /url: https://x.com/mschoening
+                  - paragraph [ref=e224]:
+                    - text: "• LinkedIn:"
+                    - link "https://www.linkedin.com/in/max-schoening" [ref=e225] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/in/max-schoening
+                  - paragraph [ref=e226]:
+                    - text: "• Website:"
+                    - link "https://max.dev" [ref=e227] [cursor=pointer]:
+                      - /url: https://max.dev
+                  - paragraph
+                  - 'heading "Referenced: Link" [level=3] [ref=e228]':
+                    - text: "Referenced:"
+                    - button "Link" [ref=e231] [cursor=pointer]:
+                      - img [ref=e232]
+                  - paragraph [ref=e235]:
+                    - text: "• Esther 4:14:"
+                    - link "https://www.biblegateway.com/passage/?search=Esther%204%3A14&version=NIV" [ref=e236] [cursor=pointer]:
+                      - /url: https://www.biblegateway.com/passage/?search=Esther%204%3A14&version=NIV
+                  - paragraph [ref=e237]:
+                    - text: "• Notion:"
+                    - link "https://www.notion.com" [ref=e238] [cursor=pointer]:
+                      - /url: https://www.notion.com
+                  - paragraph [ref=e239]:
+                    - text: "• Figma:"
+                    - link "https://www.figma.com" [ref=e240] [cursor=pointer]:
+                      - /url: https://www.figma.com
+                  - paragraph [ref=e241]:
+                    - text: "• Bret Victor—Stop Drawing Dead Fish:"
+                    - link "https://www.youtube.com/watch?v=ZfytHvgHybA" [ref=e242] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=ZfytHvgHybA
+                  - paragraph [ref=e243]:
+                    - text: "• GitHub:"
+                    - link "https://github.com" [ref=e244] [cursor=pointer]:
+                      - /url: https://github.com
+                  - paragraph [ref=e245]:
+                    - text: "• Notion’s Brian Lovin on building a shared prototype playground, using Claude Code to transform Figma designs into working code, and why AI is changing how designers work:"
+                    - link "https://www.lennysnewsletter.com/p/i-havent-written-a-single-line-of" [ref=e246] [cursor=pointer]:
+                      - /url: https://www.lennysnewsletter.com/p/i-havent-written-a-single-line-of
+                  - paragraph [ref=e247]:
+                    - text: "• Eric Liu on LinkedIn:"
+                    - link "https://www.linkedin.com/in/erictliu" [ref=e248] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/in/erictliu
+                  - paragraph [ref=e249]:
+                    - text: "• Steve Jobs’s quote:"
+                    - link "https://quotefancy.com/quote/911503/Steve-Jobs-Everything-around-you-that-you-call-life-was-made-up-by-people-that-were-no" [ref=e250] [cursor=pointer]:
+                      - /url: https://quotefancy.com/quote/911503/Steve-Jobs-Everything-around-you-that-you-call-life-was-made-up-by-people-that-were-no
+                  - paragraph [ref=e251]:
+                    - text: "• Brian Chesky’s new playbook:"
+                    - link "https://www.lennysnewsletter.com/p/brian-cheskys-contrarian-approach" [ref=e252] [cursor=pointer]:
+                      - /url: https://www.lennysnewsletter.com/p/brian-cheskys-contrarian-approach
+                  - paragraph [ref=e253]:
+                    - text: "• The Dieter Rams video pinned to Max’s X profile:"
+                    - link "https://x.com/mschoening/status/1725199919739519299" [ref=e254] [cursor=pointer]:
+                      - /url: https://x.com/mschoening/status/1725199919739519299
+                  - paragraph [ref=e255]:
+                    - text: "• Frank Gehry:"
+                    - link "https://en.wikipedia.org/wiki/Frank_Gehry" [ref=e256] [cursor=pointer]:
+                      - /url: https://en.wikipedia.org/wiki/Frank_Gehry
+                  - paragraph [ref=e257]:
+                    - text: "• He saved OpenAI, invented the “Like” button, and built Google Maps: Bret Taylor on the future of careers, coding, agents, and more:"
+                    - link "https://www.lennysnewsletter.com/p/he-saved-openai-bret-taylor" [ref=e258] [cursor=pointer]:
+                      - /url: https://www.lennysnewsletter.com/p/he-saved-openai-bret-taylor
+                  - paragraph [ref=e259]:
+                    - text: "• Joanna Stern’s post on X:"
+                    - link "https://x.com/JoannaStern/status/2023529964185022898" [ref=e260] [cursor=pointer]:
+                      - /url: https://x.com/JoannaStern/status/2023529964185022898
+                  - paragraph [ref=e261]:
+                    - text: "• How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code):"
+                    - link "https://www.lennysnewsletter.com/p/how-anthropics-product-team-moves" [ref=e262] [cursor=pointer]:
+                      - /url: https://www.lennysnewsletter.com/p/how-anthropics-product-team-moves
+                  - paragraph [ref=e263]:
+                    - text: "• This is the flowchart of how Slack decides to send a notification:"
+                    - link "https://blog.bytebytego.com/p/flowchart-of-how-slack-decides-to" [ref=e264] [cursor=pointer]:
+                      - /url: https://blog.bytebytego.com/p/flowchart-of-how-slack-decides-to
+                  - paragraph [ref=e265]:
+                    - text: "• Tyler Cowen’s blog:"
+                    - link "https://marginalrevolution.com" [ref=e266] [cursor=pointer]:
+                      - /url: https://marginalrevolution.com
+                  - paragraph [ref=e267]:
+                    - text: "• Simon Last on X:"
+                    - link "https://x.com/simonlast" [ref=e268] [cursor=pointer]:
+                      - /url: https://x.com/simonlast
+                  - paragraph [ref=e269]:
+                    - text: "• Jevons paradox:"
+                    - link "https://en.wikipedia.org/wiki/Jevons_paradox" [ref=e270] [cursor=pointer]:
+                      - /url: https://en.wikipedia.org/wiki/Jevons_paradox
+                  - paragraph [ref=e271]:
+                    - text: "• Why Software Is Eating the World:"
+                    - link "https://a16z.com/why-software-is-eating-the-world" [ref=e272] [cursor=pointer]:
+                      - /url: https://a16z.com/why-software-is-eating-the-world
+                  - paragraph [ref=e273]:
+                    - text: "• Why humans are AI’s biggest bottleneck (and what’s coming in 2026) | Alexander Embiricos (OpenAI Codex Product Lead):"
+                    - link "https://www.lennysnewsletter.com/p/why-humans-are-ais-biggest-bottleneck" [ref=e274] [cursor=pointer]:
+                      - /url: https://www.lennysnewsletter.com/p/why-humans-are-ais-biggest-bottleneck
+                  - paragraph [ref=e275]:
+                    - text: "• Heroku:"
+                    - link "https://www.heroku.com" [ref=e276] [cursor=pointer]:
+                      - /url: https://www.heroku.com
+                  - paragraph [ref=e277]:
+                    - text: "• Kubernetes:"
+                    - link "https://kubernetes.io" [ref=e278] [cursor=pointer]:
+                      - /url: https://kubernetes.io
+                  - paragraph [ref=e279]:
+                    - text: "• Kathy Sierra: Badass—Making Users Awesome, at Mind the Product San Francisco:"
+                    - link "https://www.youtube.com/watch?v=LNnv2GrlnZw" [ref=e280] [cursor=pointer]:
+                      - /url: https://www.youtube.com/watch?v=LNnv2GrlnZw
+                  - paragraph [ref=e281]:
+                    - text: "• Ivan Zhao on LinkedIn:"
+                    - link "https://www.linkedin.com/in/ivanhzhao" [ref=e282] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/in/ivanhzhao
+                  - paragraph [ref=e283]:
+                    - text: "• Dropbox:"
+                    - link "https://www.dropbox.com" [ref=e284] [cursor=pointer]:
+                      - /url: https://www.dropbox.com
+                  - paragraph [ref=e285]:
+                    - text: "• Dario Amodei on X:"
+                    - link "https://x.com/DarioAmodei" [ref=e286] [cursor=pointer]:
+                      - /url: https://x.com/DarioAmodei
+                  - paragraph [ref=e287]:
+                    - text: "• Clayton Christensen:"
+                    - link "https://en.wikipedia.org/wiki/Clayton_Christensen" [ref=e288] [cursor=pointer]:
+                      - /url: https://en.wikipedia.org/wiki/Clayton_Christensen
+                  - paragraph [ref=e289]:
+                    - text: "• The ultimate guide to JTBD | Bob Moesta (co-creator of the framework):"
+                    - link "https://www.lennysnewsletter.com/p/the-ultimate-guide-to-jtbd-bob-moesta" [ref=e290] [cursor=pointer]:
+                      - /url: https://www.lennysnewsletter.com/p/the-ultimate-guide-to-jtbd-bob-moesta
+                  - paragraph [ref=e291]:
+                    - text: "• Lee Sedol:"
+                    - link "https://en.wikipedia.org/wiki/Lee_Sedol" [ref=e292] [cursor=pointer]:
+                      - /url: https://en.wikipedia.org/wiki/Lee_Sedol
+                  - paragraph [ref=e293]:
+                    - text: "• AlphaGo:"
+                    - link "https://deepmind.google/research/alphago" [ref=e294] [cursor=pointer]:
+                      - /url: https://deepmind.google/research/alphago
+                  - paragraph [ref=e295]:
+                    - text: •
+                    - emphasis [ref=e296]: TBPN
+                    - text: ":"
+                    - link "https://www.tbpn.com" [ref=e297] [cursor=pointer]:
+                      - /url: https://www.tbpn.com
+                  - paragraph [ref=e298]:
+                    - text: "• Chris Rock:"
+                    - link "https://en.wikipedia.org/wiki/Chris_Rock" [ref=e299] [cursor=pointer]:
+                      - /url: https://en.wikipedia.org/wiki/Chris_Rock
+                  - paragraph [ref=e300]:
+                    - text: "• Stack Overflow:"
+                    - link "https://stackoverflow.com" [ref=e301] [cursor=pointer]:
+                      - /url: https://stackoverflow.com
+                  - paragraph [ref=e302]:
+                    - text: •
+                    - emphasis [ref=e303]: Project Hail Mary
+                    - text: ":"
+                    - link "https://www.imdb.com/title/tt12042730" [ref=e304] [cursor=pointer]:
+                      - /url: https://www.imdb.com/title/tt12042730
+                  - paragraph [ref=e305]:
+                    - text: •
+                    - emphasis [ref=e306]: The Handmaid’s Tale
+                    - text: ":"
+                    - link "https://www.imdb.com/title/tt5834204" [ref=e307] [cursor=pointer]:
+                      - /url: https://www.imdb.com/title/tt5834204
+                  - paragraph [ref=e308]:
+                    - text: "• Ghostty:"
+                    - link "https://ghostty.org" [ref=e309] [cursor=pointer]:
+                      - /url: https://ghostty.org
+                  - paragraph [ref=e310]:
+                    - text: "• Mitchell Hashimoto on X:"
+                    - link "https://x.com/mitchellh" [ref=e311] [cursor=pointer]:
+                      - /url: https://x.com/mitchellh
+                  - paragraph [ref=e312]:
+                    - text: "• Moshi:"
+                    - link "https://getmoshi.app" [ref=e313] [cursor=pointer]:
+                      - /url: https://getmoshi.app
+                  - paragraph [ref=e314]:
+                    - text: "• YMDK Split Keyboard Corne V4.1 46 Keys Ergonomic Hotswappable 40% Layout 3D PLA RGB QMK Vial All Key Programmable Mini Independent Gaming Keyboard Kit:"
+                    - link "https://www.amazon.com/YMDK-Ergonomic-Hotswappable-Programmable-Independent/dp/B0DWSKP3ZT" [ref=e315] [cursor=pointer]:
+                      - /url: https://www.amazon.com/YMDK-Ergonomic-Hotswappable-Programmable-Independent/dp/B0DWSKP3ZT
+                  - paragraph [ref=e316]:
+                    - text: "• Civivi pocket knives:"
+                    - link "https://www.civivi.com/collections/folding-pocket-knives" [ref=e317] [cursor=pointer]:
+                      - /url: https://www.civivi.com/collections/folding-pocket-knives?srsltid=AfmBOopTfBeV_VRJgJ3Qw64D_6syI14i6v1brdMMQpImaiz_SGQRKBeQ
+                  - paragraph [ref=e318]:
+                    - text: "• Marcus Aurelius’s quote:"
+                    - link "https://www.goodreads.com/quotes/762780-the-whole-universe-is-change-and-life-itself-is-but" [ref=e319] [cursor=pointer]:
+                      - /url: https://www.goodreads.com/quotes/762780-the-whole-universe-is-change-and-life-itself-is-but
+                  - paragraph
+                  - 'heading "Recommended books: Link" [level=3] [ref=e320]':
+                    - text: "Recommended books:"
+                    - button "Link" [ref=e323] [cursor=pointer]:
+                      - img [ref=e324]
+                  - paragraph [ref=e327]:
+                    - text: •
+                    - emphasis [ref=e328]: "Code: The Hidden Language of Computer Hardware and Software"
+                    - text: ":"
+                    - link "https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0137909101" [ref=e329] [cursor=pointer]:
+                      - /url: https://www.amazon.com/Code-Language-Computer-Hardware-Software/dp/0137909101
+                  - paragraph [ref=e330]:
+                    - text: •
+                    - emphasis [ref=e331]: Tools for Conviviality
+                    - text: ":"
+                    - link "https://www.amazon.com/Tools-Conviviality-Ivan-Illich/dp/1842300113" [ref=e332] [cursor=pointer]:
+                      - /url: https://www.amazon.com/Tools-Conviviality-Ivan-Illich/dp/1842300113
+                  - paragraph [ref=e333]:
+                    - text: •
+                    - emphasis [ref=e334]: "Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed"
+                    - text: ":"
+                    - link "https://www.amazon.com/Seeing-Like-State-Condition-Paperbacks/dp/0300246757" [ref=e335] [cursor=pointer]:
+                      - /url: https://www.amazon.com/Seeing-Like-State-Condition-Paperbacks/dp/0300246757
+                  - separator [ref=e337]
+                  - paragraph [ref=e338]:
+                    - text: Production and marketing by
+                    - link "https://penname.co/" [ref=e339] [cursor=pointer]:
+                      - /url: https://penname.co/
+                    - text: . For inquiries about sponsoring the podcast, email
+                    - link "podcast@lennyrachitsky.com" [ref=e340] [cursor=pointer]:
+                      - /url: mailto:podcast@lennyrachitsky.com
+                    - text: .
+                  - paragraph [ref=e341]:
+                    - emphasis [ref=e342]: Lenny may be an investor in the companies discussed.
+                  - separator [ref=e344]
+                  - 'heading "My biggest takeaways from this conversation: Link" [level=2] [ref=e345]':
+                    - text: "My biggest takeaways from this conversation:"
+                    - button "Link" [ref=e348] [cursor=pointer]:
+                      - img [ref=e349]
+                - region "Paywall" [ref=e352]:
+                  - heading "This post is for paid subscribers" [level=2] [ref=e353]
+                  - link "Subscribe" [ref=e355] [cursor=pointer]:
+                    - /url: https://www.lennysnewsletter.com/subscribe?simple=true&next=https%3A%2F%2Fwww.lennysnewsletter.com%2Fp%2Fwhy-cultivating-agency-matters-more%3Fhide_intro_popup%3Dtrue&utm_source=paywall&utm_medium=web&utm_content=194566669
+                    - button "Subscribe" [ref=e356]
+                  - link "Already a paid subscriber? Sign in" [ref=e358] [cursor=pointer]:
+                    - /url: https://substack.com/sign-in?redirect=%2Fp%2Fwhy-cultivating-agency-matters-more%3Fhide_intro_popup%3Dtrue&for_pub=lenny&change_user=false
+            - complementary "Sidebar content" [ref=e360]:
+              - generic [ref=e361] [cursor=pointer]:
+                - generic [ref=e362]:
+                  - link "Lenny's Newsletter" [ref=e363]:
+                    - /url: https://www.lennysnewsletter.com
+                    - img "Lenny's Newsletter" [ref=e364]
+                  - generic [ref=e365]: "Lenny's Podcast: Product | Career | Growth"
+                  - generic [ref=e367]: Interviews with world-class product leaders and growth experts to uncover concrete, actionable, and tactical advice to help you build, launch, and grow your own product.
+                - generic [ref=e373]:
+                  - textbox "Type your email..." [ref=e376]
+                  - button "Subscribe" [disabled] [ref=e377]
+              - generic [ref=e378]:
+                - region [ref=e379]:
+                  - generic [ref=e380]: Listen on
+                  - generic [ref=e381]:
+                    - generic [ref=e385] [cursor=pointer]: Substack App
+                    - generic [ref=e389] [cursor=pointer]: Apple Podcasts
+                    - generic [ref=e393] [cursor=pointer]: Spotify
+                    - generic [ref=e397] [cursor=pointer]: YouTube
+                    - generic [ref=e401] [cursor=pointer]: Pocket Casts
+                    - generic [ref=e405] [cursor=pointer]: RSS Feed
+                - region "Appears in episode" [ref=e406]:
+                  - generic [ref=e407]: Appears in episode
+                  - generic [ref=e409]:
+                    - generic [ref=e410]:
+                      - link "View Lenny Rachitsky's profile" [ref=e412] [cursor=pointer]:
+                        - /url: https://substack.com/@lenny?utm_source=author-byline-face-podcast
+                        - generic "Lenny Rachitsky" [ref=e414]:
+                          - img "Lenny Rachitsky's avatar" [ref=e416]
+                      - img [ref=e420] [cursor=pointer]
+                    - link "Lenny Rachitsky" [ref=e426] [cursor=pointer]:
+                      - /url: https://substack.com/@lenny
+                - region "Recent episodes" [ref=e427]:
+                  - generic [ref=e428]: Recent Episodes
+                  - region "Recent episodes" [ref=e429]:
+                    - article "Post preview for The hidden pattern behind successful products | Mark Pincus (founder of Zynga)" [ref=e430] [cursor=pointer]:
+                      - generic [ref=e431]:
+                        - button "s" [ref=e434]:
+                          - img "Play" [ref=e435]
+                        - generic [ref=e439]:
+                          - link "The hidden pattern behind successful products | Mark Pincus (founder of Zynga)" [ref=e441]:
+                            - /url: https://www.lennysnewsletter.com/p/the-common-pattern-behind-successful
+                          - generic [ref=e442]:
+                            - img [ref=e444]
+                            - time [ref=e447]: Jun 14
+                            - text: •
+                            - link "Lenny Rachitsky" [ref=e449]:
+                              - /url: https://substack.com/@lenny
+                    - article "Post preview for Father of the iPod and iPhone on building taste, judgment, and creativity in the AI era | Tony Fadell" [ref=e450] [cursor=pointer]:
+                      - generic [ref=e451]:
+                        - button "s" [ref=e454]:
+                          - img "Play" [ref=e455]
+                        - generic [ref=e459]:
+                          - link "Father of the iPod and iPhone on building taste, judgment, and creativity in the AI era | Tony Fadell" [ref=e461]:
+                            - /url: https://www.lennysnewsletter.com/p/father-of-the-ipod-and-iphone-on
+                          - generic [ref=e462]:
+                            - img [ref=e464]
+                            - time [ref=e467]: Jun 7
+                            - text: •
+                            - link "Lenny Rachitsky" [ref=e469]:
+                              - /url: https://substack.com/@lenny
+                    - article "Post preview for A rational conversation on where AI is actually going | Benedict Evans" [ref=e470] [cursor=pointer]:
+                      - generic [ref=e471]:
+                        - button "s" [ref=e474]:
+                          - img "Play" [ref=e475]
+                        - generic [ref=e479]:
+                          - link "A rational conversation on where AI is actually going | Benedict Evans" [ref=e481]:
+                            - /url: https://www.lennysnewsletter.com/p/a-rational-conversation-on-where
+                          - generic [ref=e482]:
+                            - img [ref=e484]
+                            - time [ref=e487]: May 31
+                            - text: •
+                            - link "Lenny Rachitsky" [ref=e489]:
+                              - /url: https://substack.com/@lenny
+                    - 'article "Post preview for The AI paradox: More automation, more humans, more work | Dan Shipper" [ref=e490] [cursor=pointer]':
+                      - generic [ref=e491]:
+                        - button "s" [ref=e494]:
+                          - img "Play" [ref=e495]
+                        - generic [ref=e499]:
+                          - 'link "The AI paradox: More automation, more humans, more work | Dan Shipper" [ref=e501]':
+                            - /url: https://www.lennysnewsletter.com/p/the-ai-paradox-dan-shipper
+                          - generic [ref=e502]:
+                            - img [ref=e504]
+                            - time [ref=e507]: May 24
+                            - text: •
+                            - link "Lenny Rachitsky" [ref=e509]:
+                              - /url: https://substack.com/@lenny
+                    - article "Post preview for Why we’re at the beginning of the AI hardware boom | Caitlin Kalinowski (ex–OpenAI, Meta, Apple)" [ref=e510] [cursor=pointer]:
+                      - generic [ref=e511]:
+                        - button "s" [ref=e514]:
+                          - img "Play" [ref=e515]
+                        - generic [ref=e519]:
+                          - link "Why we’re at the beginning of the AI hardware boom | Caitlin Kalinowski (ex–OpenAI, Meta, Apple)" [ref=e521]:
+                            - /url: https://www.lennysnewsletter.com/p/why-were-at-the-beginning-of-the
+                          - generic [ref=e522]:
+                            - img [ref=e524]
+                            - time [ref=e527]: May 17
+                            - text: •
+                            - link "Lenny Rachitsky" [ref=e529]:
+                              - /url: https://substack.com/@lenny
+                    - article "Post preview for How to build a company that withstands any era | Eric Ries, Lean Startup author" [ref=e530] [cursor=pointer]:
+                      - generic [ref=e531]:
+                        - button "s" [ref=e534]:
+                          - img "Play" [ref=e535]
+                        - generic [ref=e539]:
+                          - link "How to build a company that withstands any era | Eric Ries, Lean Startup author" [ref=e541]:
+                            - /url: https://www.lennysnewsletter.com/p/how-to-build-a-company-that-withstands
+                          - generic [ref=e542]:
+                            - img [ref=e544]
+                            - time [ref=e547]: May 10
+                            - text: •
+                            - link "Lenny Rachitsky" [ref=e549]:
+                              - /url: https://substack.com/@lenny
+                    - 'article "Post preview for Snapchat CEO: Why distribution has become the most important moat | Evan Spiegel" [ref=e550] [cursor=pointer]':
+                      - generic [ref=e551]:
+                        - button "s" [ref=e554]:
+                          - img "Play" [ref=e555]
+                        - generic [ref=e559]:
+                          - 'link "Snapchat CEO: Why distribution has become the most important moat | Evan Spiegel" [ref=e561]':
+                            - /url: https://www.lennysnewsletter.com/p/snapchat-ceo-why-distribution-is
+                          - generic [ref=e562]:
+                            - img [ref=e564]
+                            - time [ref=e567]: Apr 26
+                            - text: •
+                            - link "Lenny Rachitsky" [ref=e569]:
+                              - /url: https://substack.com/@lenny
+    - generic [ref=e572]:
+      - generic [ref=e573]:
+        - generic [ref=e574]: © 2026 Substack Inc
+        - text: ·
+        - link "Privacy" [ref=e575] [cursor=pointer]:
+          - /url: https://substack.com/privacy
+        - text: ∙
+        - link "Terms" [ref=e576] [cursor=pointer]:
+          - /url: https://substack.com/tos
+        - text: ∙
+        - link "Collection notice" [ref=e577] [cursor=pointer]:
+          - /url: https://substack.com/ccpa#personal-data-collected
+      - generic [ref=e578]:
+        - link "Start your Substack" [ref=e579] [cursor=pointer]:
+          - /url: https://substack.com/signup?utm_source=substack&utm_medium=web&utm_content=footer
+          - img [ref=e580]
+          - text: Start your Substack
+        - link "Get the app" [ref=e585] [cursor=pointer]:
+          - /url: https://substack.com/app/app-store-redirect?utm_campaign=app-marketing&utm_content=web-footer-button
+      - generic [ref=e586]:
+        - link "Substack" [ref=e587] [cursor=pointer]:
+          - /url: https://substack.com
+        - text: is the home for great culture
+    - generic [ref=e589]:
+      - heading "Cookie Policy" [level=4] [ref=e590]
+      - generic [ref=e591]:
+        - text: We use cookies to improve your experience, for analytics, and for marketing. You can accept, reject, or manage your preferences. See our
+        - link "privacy policy" [ref=e592] [cursor=pointer]:
+          - /url: https://substack.com/tos
+        - text: .
+      - generic [ref=e593]:
+        - button "Manage" [ref=e594] [cursor=pointer]
+        - button "Reject" [ref=e595] [cursor=pointer]
+        - button "Accept" [ref=e596] [cursor=pointer]
+  - region "Notifications (F8)":
+    - list

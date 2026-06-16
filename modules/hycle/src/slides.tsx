@@ -19,9 +19,9 @@ import {
  * script: ../talk-outline.md. Entries with { node, steps } reveal on arrow keys.
  *
  * Arc: cold open (1-2) -> the bottleneck moved, intent + agency (3-4) -> the
- * trap, two futures + Block (5-7) -> what changes, three shifts + FINN (8-11)
- * -> what's yours vs what isn't (12) -> what this is, hycle (13) -> the three
- * questions + handoff to Nermin (14-15).
+ * trap, two futures + Block (5-7) -> what changes, three shifts + FINN + Notion (8-12)
+ * -> what's yours vs what isn't (13) -> what this is, hycle (14) -> the three
+ * questions + handoff to Nermin (15-16).
  */
 
 /* a small forward chevron, reused between the two flows */
@@ -230,6 +230,22 @@ export const slides: SlideDef[] = [
         quote={<>Scrum was a buffer for when code was expensive. I killed it.</>}
         attribution="Andreas Stryz, CTO at FINN, 2026"
         punchline="Micro teams. One PM, a few engineers. Each owns one KPI, not a backlog."
+        stepped
+      />
+    ),
+    steps: 1,
+  },
+
+  /* 11.5 — Notion: agency in action. You don't need permission to shape your domain.
+   * Source: Max Schoening (Head of Product, Notion), Lenny's Podcast, May 2026
+   * https://www.lennysnewsletter.com/p/why-cultivating-agency-matters-more */
+  {
+    node: (
+      <Quote
+        eyebrow="Agency in action"
+        quote={<>Do you drive Notion like it's stolen?</>}
+        attribution="Max Schoening, Head of Product at Notion"
+        punchline="You don't own it officially. But you move like you do. Decisions in your domain are yours to own."
         stepped
       />
     ),
