@@ -323,6 +323,34 @@ export function Code({ title, code }: { title?: ReactNode; code: string }) {
   )
 }
 
+/* a captioned figure: a source diagram embedded verbatim, with an optional
+ * credit in the corner. For showing someone else's diagram rather than rebuilding it. */
+export function Figure({
+  eyebrow,
+  title,
+  src,
+  alt,
+  footer,
+  credit,
+}: {
+  eyebrow?: string
+  title?: ReactNode
+  src: string
+  alt: string
+  footer?: ReactNode
+  credit?: string
+}) {
+  return (
+    <Slide>
+      {eyebrow && <div className="eyebrow">{eyebrow}</div>}
+      {title && <h1>{title}</h1>}
+      <img className="figure-img" src={src} alt={alt} />
+      {footer && <p className="boxes-footer">{footer}</p>}
+      {credit && <div className="source-note">{credit}</div>}
+    </Slide>
+  )
+}
+
 export function Exercise({
   title,
   duration,

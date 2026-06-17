@@ -8,19 +8,20 @@ import {
   CardGrid,
   BigStats,
   NumberedList,
-  Ladder,
   Code,
+  Figure,
   type SlideDef,
 } from './kit'
+import qrspi from './assets/qrspi.png'
 
 /*
  * Retrospective for your AI Factory (Day 2, 09:00-09:30, Tereza).
- * Arc: collect on the keynote's two "tomorrow morning" slides, reframe the
- * factory as a team you retro, walk the three questions (see it / test it /
- * make it stick) from this-week to ideal, then hand into Pod block 3.
- * Style and kit are the keynote's. Slides 1 and 2 are reused verbatim from it.
- * Named examples (Cursor, Anthropic) and the postmortem are researched: see
- * research/harness-eval-practices.md. Verify post-cutoff figures before presenting.
+ * Widened arc (see research/2026-06-17-widen-design.md): open on the keynote's two
+ * "tomorrow morning" slides, ground the retro in agile, widen the factory to the whole
+ * lifecycle (QRSPI + a real dev workflow), show the loop and the discipline that makes it
+ * halt, then walk see-it / define-right / post-mortem, and close on the human meta layer.
+ * Reframed away from "the factory optimizes itself": be aware of a flaw first, then improve,
+ * by hand before automation. Sources + verify flags: research/2026-06-17-widen-design.md.
  */
 
 export const slides: SlideDef[] = [
@@ -47,6 +48,28 @@ export const slides: SlideDef[] = [
     steps: 2,
   },
 
+  /* 1b — what a retro is, from agile; pose the success question into the next slide */
+  <Boxes
+    eyebrow="Borrowed from agile"
+    title="First, what is a retro?"
+    cols={2}
+    boxes={[
+      {
+        label: 'In Scrum',
+        title: 'Look back, then improve',
+        text: 'A retrospective reviews the last sprint to decide what to keep, change, and act on. The sprint succeeds when every issue is closed.',
+        tone: 'teal',
+      },
+      {
+        label: 'With agents',
+        title: 'You manage the team now',
+        text: 'A developer runs a team of agents. Same practice, pointed at the factory. But what counts as a good run is still up for debate.',
+        tone: 'purple',
+      },
+    ]}
+    footer="In Scrum the finish line is given. For a factory of agents, you define it first."
+  />,
+
   /* 2 — reused from the keynote: the evaluation question, by constraint */
   <CardGrid
     eyebrow="Evaluating the factory"
@@ -60,15 +83,44 @@ export const slides: SlideDef[] = [
     footer="You cannot maximize all four at once. Name the constraint you are under, then measure against it. That is tomorrow morning: data, not vibes."
   />,
 
-  /* 3 — reframe: your factory is a team you retro */
+  /* 3 — reframe: your factory is a team you retro (tightened to the twist only) */
   <Statement
-    eyebrow="It's a retrospective"
-    sub="The agents, the harness, you. Keep, change, act. But here the action item changes the system, so the same miss cannot come back."
+    eyebrow="The twist"
+    sub="A team retro produces action items for people. Here the action item changes the system itself, so the same miss cannot come back."
   >
     Your factory is a <Accent>team</Accent>. Retro it.
   </Statement>,
 
-  /* 4 — the three questions as one loop */
+  /* 4 — the whole lifecycle: QRSPI image, credited to Lavaee */
+  <Figure
+    eyebrow="The whole lifecycle"
+    title="The factory is bigger than the code step."
+    src={qrspi}
+    alt="QRSPI stages: alignment is Questions, Research, Design, Structure, Plan; execution is Work tree, Implement, PR review"
+    footer="Most failures happen before code. Eventually you want observability and eval at every agent in the loop."
+    credit="Alex Lavaee, alexlavaee.me/blog/from-rpi-to-qrspi"
+  />,
+
+  /* 5 — how we want the system to run (a real workflow, scripts stripped) */
+  <Code
+    title="How we want the system to run."
+    code={`# Start work: feature branch, mark the issue in progress
+
+# Develop (TDD loop)
+#   1. failing test  2. make it pass  3. refactor  4. commit with the issue file
+
+# Verify: a sub-agent checks it actually works
+
+# Open the PR
+git push -u origin <branch>
+gh pr create --title "..." --body "..."
+
+# Review (parallel sub-agents): post findings, fix the critical ones, wait for a human
+
+# After merge: back to main, delete the branch, mark the issue done`}
+  />,
+
+  /* 6 — the three questions as one loop, asked at every stage */
   <BigLoop
     eyebrow="Three questions, one loop"
     title="A retro asks three things."
@@ -80,10 +132,56 @@ export const slides: SlideDef[] = [
     badge="your factory"
     badgeTone="teal"
     prompt="Observability. Evals. Learning loops."
-    footer="Treat your pipeline as a product."
+    footer="Ask them at every stage, not just the code step."
   />,
 
-  /* 5 — how the labs evaluate: a spectrum, Cursor to Anthropic */
+  /* 7 — the loop has two layers: inner agent, outer control plane */
+  {
+    node: (
+      <BigLoop
+        eyebrow="Two loops, not one"
+        title="The agent loops. You wrap it."
+        stops={[{ label: 'read' }, { label: 'call a tool' }, { label: 'observe' }]}
+        badge="the agent"
+        badgeTone="teal"
+        prompt="Inner loop: the agent. Outer loop: stage, artifact, review, budget."
+        footer="Let the model run inside the loop. Do not let it be the loop."
+        stepped
+      />
+    ),
+    steps: 1,
+  },
+
+  /* 8 — loops, the production version: the ambition vs receipts gap */
+  {
+    node: (
+      <BigStats
+        eyebrow="Loops, the production version"
+        stats={[
+          { value: '17%', label: 'of orgs have shipped agents', tone: 'teal' },
+          { value: '40%', label: 'of agent projects cancelled by 2027', tone: 'amber' },
+        ]}
+        footer="The romantic version: write loops, a thousand agents build your company. The production version: write loops, and most of your job is making them halt. Gartner blames inadequate risk controls."
+        note="Gartner, 2026 Hype Cycle for Agentic AI"
+        stepped
+      />
+    ),
+    steps: 2,
+  },
+
+  /* 8b — make it halt: the three hard stops as config */
+  <Code
+    title="Make it halt. Three hard stops."
+    code={`// the outer loop's stopping conditions
+maxIterations:    8,
+noProgressAfter:  2,        // consecutive steps with no new artifact
+budgetCeilingUsd: 5.00,     // hard stop, no exceptions
+
+// no-progress detection is "iterating too many times without converging",
+// caught by the system instead of by you watching.`}
+  />,
+
+  /* 9 — how the labs evaluate: a spectrum, Cursor to Anthropic */
   <Boxes
     eyebrow="Two labs, one spectrum"
     title="Monitor, or experiment."
@@ -105,7 +203,7 @@ export const slides: SlideDef[] = [
     footer="Production signals and a test suite. You need both ends."
   />,
 
-  /* 6 — the cautionary tale: the harness moved, the model did not */
+  /* 10 — the cautionary tale: the harness moved, the model did not */
   <Statement
     eyebrow="Anthropic, 2026"
     sub="Six weeks chasing 'Claude got dumber.' A few quiet changes to the scaffolding caused it, not the model, and the eval suite was too narrow to see it. Watch the whole factory, not just the model."
@@ -113,7 +211,7 @@ export const slides: SlideDef[] = [
     The model never changed. The <Accent>harness</Accent> did.
   </Statement>,
 
-  /* 7 — see it: trace the run, not just the result */
+  /* 11 — see it: trace the run, not just the result */
   {
     node: (
       <Layers
@@ -130,7 +228,15 @@ export const slides: SlideDef[] = [
     steps: 2,
   },
 
-  /* 8 — see it: this week to ideal */
+  /* 11b — the questions a trace lets you ask */
+  <Statement
+    eyebrow="Now you can ask"
+    sub="How many loops did it take? Is it converging, or thrashing? And the one that matters most: what does a good run even look like here?"
+  >
+    A trace turns <Accent>vibes</Accent> into questions you can answer.
+  </Statement>,
+
+  /* 12 — see it: this week to ideal (your own stack) */
   {
     node: (
       <Boxes
@@ -142,59 +248,39 @@ export const slides: SlideDef[] = [
           {
             label: 'This week',
             title: 'Read the record each task leaves',
-            text: 'The plan it followed and the log of what it changed. You already have this.',
+            text: 'The plan it followed and the log of what it changed. Start with metrics you already track: lead time, change-failure rate, the DORA four.',
             tone: 'teal',
           },
           {
             label: 'Ideal',
-            title: 'Trace the path, not just the result',
-            text: 'What it read, ran, and retried. Instrument the signal you need, not the tool you use.',
+            title: 'Trace every step, on your own stack',
+            text: 'What it read, ran, and retried. Point the observability you already run at your agents: Prometheus and Grafana, or a purpose-built tracer.',
             tone: 'purple',
           },
         ]}
-        footer="Start with what the factory already writes down."
+        footer="Track with the tools you already own. Do not adopt a toy."
       />
     ),
     steps: 2,
   },
 
-  /* 9 — test it: name one constraint, define pass */
-  <Statement
-    eyebrow="Trust, but verify"
-    sub="Cost, time, quality, or trust. You cannot maximize all four. Pick the one you are under, then write down the bar a change has to clear."
-  >
-    Name <Accent>one</Accent> constraint. Define what pass means.
-  </Statement>,
+  /* 13 — define right: code your expectations (rules + Definition of Done) */
+  <Code
+    title="Code your expectations."
+    code={`# "Working" = these hold:
+1. never commit straight to main; always a feature branch
+2. never merge your own PR; a human reviews first
+3. tests before implementation
+4. smoke-test before the PR
+5. keep the issue checklist current
 
-  /* + two kinds of eval: a script decides, or a model judges (sets up 02 Part 1/2) */
-  {
-    node: (
-      <Boxes
-        eyebrow="Two kinds of check"
-        title="A script decides, or a model judges."
-        cols={2}
-        stepped
-        boxes={[
-          {
-            label: 'Deterministic',
-            title: 'A check a script can run',
-            text: 'Did it touch the right files? Are the headings there? Do the tests pass? Pass or fail, no model needed.',
-            tone: 'teal',
-          },
-          {
-            label: 'LLM as a judge',
-            title: 'A model grades the output',
-            text: 'Is the plan at the right altitude? Are the acceptance criteria real? For the quality no rule can measure. Grade with a different model than the one that wrote it, and validate the judge.',
-            tone: 'purple',
-          },
-        ]}
-        footer="Most of what matters is a cheap deterministic check. Reach for a judge only where judgment is the point."
-      />
-    ),
-    steps: 2,
-  },
+# Every issue carries a Definition of Done.
+# You cannot mark it complete with unchecked items.
 
-  /* 10 — test it: this week to ideal */
+# "Not working" = any one of these broke.`}
+  />,
+
+  /* 14 — test it: this week to ideal (scripts decide, a model judges the rest) */
   {
     node: (
       <Boxes
@@ -206,13 +292,13 @@ export const slides: SlideDef[] = [
           {
             label: 'This week',
             title: 'One seeded defect, one gate',
-            text: 'Plant a known mistake. Make sure a check catches it before the code lands. Pass or fail, nothing in between.',
+            text: 'Plant a known mistake. A check catches it before code lands. Most checks are a script: did it touch the right files, are the headings there, do the tests pass.',
             tone: 'teal',
           },
           {
             label: 'Ideal',
-            title: 'Capability checks and regression checks',
-            text: 'Hard new cases you push upward, plus known-good cases that must stay green.',
+            title: 'Scripts decide, a model judges the rest',
+            text: 'A script for what rules can measure. A different model as judge for the quality they cannot, validated against human labels.',
             tone: 'purple',
           },
         ]}
@@ -222,7 +308,7 @@ export const slides: SlideDef[] = [
     steps: 2,
   },
 
-  /* 11 — the bridge: escapes become tests */
+  /* 15 — the bridge: escapes become tests */
   <Statement
     eyebrow="The bridge to loops"
     sub="A defect that slips past once is tagged with the PR that introduced it, then planted as a fixture. It can never slip past again. Public benchmarks rot and leak; your own escapes do not."
@@ -230,7 +316,7 @@ export const slides: SlideDef[] = [
     Every escape becomes a <Accent>test</Accent>.
   </Statement>,
 
-  /* 12 — the four rules everyone converges on (headline) */
+  /* 16 — the four rules everyone converges on (headline) */
   {
     node: (
       <Boxes
@@ -250,20 +336,20 @@ export const slides: SlideDef[] = [
     steps: 4,
   },
 
-  /* 13 — make it stick: the loop shape */
+  /* 17 — make it stick: run the post-mortem to the system */
   <NumberedList
-    eyebrow="Build a learning system"
-    title="The loop that makes it stick."
+    eyebrow="When behaviour diverges"
+    title="Run the post-mortem to the system."
     items={[
-      { text: 'Signal', hint: 'a metric moved, a review caught something, a human had to step in' },
-      { text: 'Diagnosis', hint: 'why it happened, and where in the factory' },
+      { text: 'Signal', hint: 'a rule broke, a metric moved, a human had to step in' },
+      { text: 'Diagnose', hint: 'why it happened, and where in the factory' },
       { text: 'Change the system', hint: 'not the one artifact: the rule, the skill, the check' },
       { text: 'Verify it holds', hint: 're-measure against the baseline' },
       { text: 'The next agent inherits it', hint: 'the fix lives where the next run will read it' },
     ]}
   />,
 
-  /* + 5 whys: the diagnosis technique, a callback to the postmortem (slide 6) */
+  /* 17b — 5 whys: the diagnosis technique, a callback to the postmortem (slide 10) */
   <NumberedList
     eyebrow="Diagnosis, done right"
     title="Ask why until you hit the system."
@@ -277,25 +363,25 @@ export const slides: SlideDef[] = [
     footer="Stop at why one and you blame the model. Keep going and you fix the system. Five whys turns a postmortem into a change."
   />,
 
-  /* 14 — make it stick: this week to ideal */
+  /* 18 — make it stick: improve by hand first, automate last */
   {
     node: (
       <Boxes
         eyebrow="Make it stick"
-        title="Learning loops."
+        title="Improve by hand first."
         cols={2}
         stepped
         boxes={[
           {
-            label: 'This week',
-            title: 'Codify one rule, write one card',
-            text: 'Turn one merged-PR learning into a rule the next agent reads. State the metric, the baseline, the check-back date.',
+            label: 'First, by hand',
+            title: 'Fix it, then codify it',
+            text: 'Turn one merged-PR learning into a rule the next agent reads. Reviews post findings; a rework pass fixes them; a repeated escape becomes a hook.',
             tone: 'teal',
           },
           {
-            label: 'Ideal',
-            title: 'The factory improves itself',
-            text: 'Sessions get mined for repeated friction. Process changes get proposed, not just remembered.',
+            label: 'Only then, automate',
+            title: 'Wire the proven check into the loop',
+            text: 'Once a check earns its keep by hand, make it a hook or a gate. Automation is the last step, not the first.',
             tone: 'purple',
           },
         ]}
@@ -305,55 +391,62 @@ export const slides: SlideDef[] = [
     steps: 2,
   },
 
-  /* 15 — the mirror invariant (headline) */
-  <Statement
-    eyebrow="The mirror invariant"
-    sub="Path-scoped rules and review triggers point at the same files. The guardrail and its check move together, or the guardrail rots. A working agreement no one checks is just a wish."
-  >
-    The rule that guides the edit is the rule the <Accent>review checks</Accent>.
-  </Statement>,
+  /* 19 — the mirror invariant, made concrete: the enforcing hooks */
+  <Code
+    title="A working agreement no one checks is just a wish."
+    code={`# expectations, enforced by hooks
 
-  /* + in practice: build it once by hand, then use a maintained tool (Logfire etc.) */
+PreToolUse hook    validates every branch name; a bad name is blocked.
+PostToolUse hook   validates the Definition of Done; an issue with
+                   unchecked items cannot be marked complete.
+
+# the rule that guides the edit is the rule the system checks.`}
+  />,
+
+  /* 20 — tooling at a glance: map tools to pillars, use your own stack */
   <Boxes
-    eyebrow="In practice"
-    title="Build it once by hand. Then don't."
+    eyebrow="Tooling at a glance"
+    title="Build it once by hand. Then choose a tool."
     cols={2}
     boxes={[
       {
         label: 'See it',
-        title: 'Do not hand-roll tracing',
-        text: 'OpenTelemetry-based platforms capture runs, tokens, and cost for you. Pydantic Logfire, and peers.',
+        title: 'Tracing and metrics',
+        text: 'OpenTelemetry as the wire format. Logfire or Langfuse purpose-built, or point Prometheus and Grafana, which you already run, at your agents.',
         tone: 'teal',
       },
       {
         label: 'Test it',
-        title: 'Do not hand-roll the harness',
-        text: 'Eval frameworks run your cases and track them over time. pydantic-evals, Braintrust, Langfuse.',
+        title: 'Eval harnesses',
+        text: 'pydantic-evals, Braintrust, Langfuse run your cases and track them over time.',
         tone: 'purple',
       },
     ]}
     footer="Build the hook and the check by hand once, so you choose a tool instead of cargo-culting one. The principle outlives the vendor."
   />,
 
-  /* 16 — crawl, walk, run */
-  {
-    node: (
-      <Ladder
-        eyebrow="Getting started, to ideal"
-        title="You do not need run. You need crawl."
-        rungs={[
-          { n: 'Crawl', title: 'This week', desc: 'one trace, one metric, one check-back date' },
-          { n: 'Walk', title: 'This quarter', desc: 'a gate on every run, rules codified, escapes become fixtures' },
-          { n: 'Run', title: 'The ideal', desc: 'continuous monitoring and controlled experiments; the factory tunes itself' },
-        ]}
-        stats="Most teams never reach run and ship fine. Crawl, every month, beats a perfect run you never start."
-        punchline="Find the rung just above where you are. Then climb one."
-      />
-    ),
-    steps: 2,
-  },
+  /* 21 — where to start: the basic loop on the workflow you already have */
+  <NumberedList
+    eyebrow="Where to start"
+    title="Start with the basic steps of your workflow."
+    items={[
+      { text: 'Observe', hint: 'trace one real run and see what actually happened' },
+      { text: 'Improve', hint: 'fix the one thing that broke, by hand' },
+      { text: 'Expand', hint: 'add the next stage, the next check' },
+      { text: 'Iterate', hint: 'run it again and let the small loop compound' },
+    ]}
+    footer="A small loop on the workflow you already have. Start there."
+  />,
 
-  /* 17 — the keystone: the change protocol, as a card */
+  /* 22 — the meta layer stays human: who decides what to automate */
+  <Statement
+    eyebrow="Who tunes the factory?"
+    sub="Stage by stage you hand more to agents. The meta layer, where you decide what to measure, what good means, and what to automate, stays yours. The Day 1 cases kept the human heavily in that loop. Alignment up front means the final review is a spot-check, not a slog."
+  >
+    Automation is the <Accent>last</Accent> step, not the first.
+  </Statement>,
+
+  /* 23 — the keystone: the change protocol, as a card */
   <Code
     title="How we'll know it worked."
     code={`# How we'll know it worked
@@ -367,7 +460,7 @@ Revert if:    it blocks a good change more than 1 in 10
 # State all five, or the change fails review.`}
   />,
 
-  /* 18 — hand into the pod block */
+  /* 24 — hand into the pod block */
   <CardGrid
     eyebrow="Pod block 3, next"
     title="What is quality for your factory?"
@@ -376,6 +469,34 @@ Revert if:    it blocks a good change more than 1 in 10
       { title: 'Measure it', desc: 'Instrument it on the pipeline you built. Capture the baseline.' },
       { title: 'Improve one thing', desc: 'Close one loop. One improvement end to end beats ten half-built.' },
     ]}
-    footer="Two hours. You leave with a number you did not have this morning."
+    footer="The sandbox taught you the moves. Now run them on your factory. Two hours, and you leave with a number you did not have this morning."
+  />,
+
+  /* 25 — tools you can use today */
+  <Boxes
+    eyebrow="Start today"
+    title="Three tools you can open now."
+    cols={3}
+    boxes={[
+      {
+        label: 'The standard',
+        title: 'OpenTelemetry',
+        text: 'opentelemetry.io. Vendor-neutral traces and metrics. The format the rest can read.',
+        tone: 'teal',
+      },
+      {
+        label: 'Purpose-built',
+        title: 'Pydantic Logfire',
+        text: 'pydantic.dev/logfire. Tracing made for LLM apps and agents: runs, tokens, and cost.',
+        tone: 'purple',
+      },
+      {
+        label: 'Your own stack',
+        title: 'Grafana',
+        text: 'grafana.com. AI observability for agents, on the Prometheus and Grafana you already run.',
+        tone: 'amber',
+      },
+    ]}
+    footer="One standard, one purpose-built tool, one you already own. Pick one and trace a single run this week."
   />,
 ]
