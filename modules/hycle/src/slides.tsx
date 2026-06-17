@@ -1,5 +1,6 @@
 import {
   Accent,
+  BigLoop,
   BigStats,
   Boxes,
   Cover,
@@ -18,10 +19,12 @@ import {
  * A 25-minute message talk, theory only, no demo. Full outline and speaker
  * script: ../talk-outline.md. Entries with { node, steps } reveal on arrow keys.
  *
- * Arc: cold open (1-2) -> the bottleneck moved, intent + agency (3-4) -> the
- * trap, two futures + Block (5-7) -> what changes, three shifts + FINN + Notion (8-12)
- * -> what's yours vs what isn't (13) -> what this is, hycle (14) -> the three
- * questions + handoff to Nermin (15-16).
+ * Arc: cold open, the factory as a magnifier (1-2) -> hycle named, the pun (3)
+ * -> the bottleneck moved, intent + agency (4-5) -> the trap, two futures,
+ * Block (6-9) -> the positive vision + the build/measure/learn loop (10-11) ->
+ * what changes: three shifts, already happening at FINN (12-13) -> what's yours
+ * vs what isn't, so take ownership at Notion (14-15) -> the three questions,
+ * close (16-17).
  */
 
 /* a small forward chevron, reused between the two flows */
@@ -82,10 +85,12 @@ export const slides: SlideDef[] = [
     presenters="Andreas Stephan"
   />,
 
-  /* 2 — cold open. The hook: contradict the last day and a half. */
+  /* 2 — cold open. The hook: contradict the last day and a half. Opens with the
+   * Day-1 callback to Tereza's keynote (slide 11, "Starting is simple. A team
+   * factory isn't.") to re-establish the cross-day bookend. */
   <Statement
     eyebrow="A day and a half ago, you built a software factory"
-    sub="And on its own, it will not make your company better. It can make it worse. For the next twenty minutes, let me convince you why, and what to change."
+    sub="On Day 1, Tereza told you starting is simple and the team factory is the uncharted part. She was right, and what she set up I am here to answer. A factory is a magnifying glass: it amplifies whatever your organization already is. On its own it will not make your company better. It can even make it worse. For the next twenty minutes, let me convince you why, and what to change."
   >
     It works.
   </Statement>,
@@ -178,40 +183,67 @@ export const slides: SlideDef[] = [
   /* 8 — the turn: the third path you have to build */
   <Statement
     eyebrow="Two futures, one non-choice"
-    sub="Both are what happens when you leave the decision where it is. The third path, the one where the factory makes you better, you have to build. With structure, not tools."
+    sub="Both are what happens when you leave the decision where it is. The third path, the one where the factory makes you better, is a choice, and the factory will not make it for you."
   >
     These are the same future.
   </Statement>,
 
-  /* 8.5 — the upside: what becomes possible */
-  <Statement
-    eyebrow="If you get the org right"
-    sub="Half-finished MVPs that solve nothing. Solutions that were too expensive to build. Customer problems that stayed unsolved for years because the economics did not work. All of that changes. You can finally solve them. That is what this unlocks."
-  >
-    We can build real solutions.
-  </Statement>,
+  /* 9 — the upside: a positive vision. The closing line fades in (step 1) and carries it. */
+  {
+    node: (
+      <Slide center>
+        <div className="eyebrow">The third path</div>
+        <h1 className="statement-h">Delightful products.</h1>
+        <p className="subtitle">
+          MVPs were often mediocre compromises. Now software is malleable. You can build what genuinely
+          meets a customer's need, and reach problems that were too expensive to touch before. But only if
+          you listen, reflect, and learn.
+        </p>
+        <Step at={1} block>
+          <p className="statement-standout">You can finally build what the customer actually needs. That is what this unlocks.</p>
+        </Step>
+      </Slide>
+    ),
+    steps: 1,
+  },
 
-  /* 9 — what changes divider */
-  <Section kicker="What actually changes" title="Three shifts. None of them technical." />,
+  /* 10 — the loop you cannot skip; reinforces "listen, reflect, learn" from the vision */
+  {
+    node: (
+      <BigLoop
+        eyebrow="The loop you cannot skip"
+        title="Build, measure, learn."
+        stops={[{ label: 'Build' }, { label: 'Measure' }, { label: 'Learn' }]}
+        badge="the lean loop"
+        badgeTone="teal"
+        prompt="Many teams only optimize build. The learning is where a product gets good."
+        footer="Exhale. Reflect. Try again. Kill bad ideas early."
+        speed="steady"
+        stepped
+      />
+    ),
+    steps: 1,
+  },
 
-  /* 10 — the three shifts, revealed one at a time */
+  /* 11 — what changes: the three shifts, announced and enumerated on one slide */
   {
     node: (
       <NumberedList
-        title="What actually changes"
+        eyebrow="What actually changes"
+        title="Three shifts. None of them technical."
         stepped
         items={[
           {
             text: 'Aim at decisions, not execution',
-            hint: 'Stop measuring how fast you build. Time your slowest decision. That number is your real cycle time.',
+            hint: 'Don\'t only measure how fast you can build. Time your slowest decision. That number is your real cycle time.',
           },
           {
-            text: 'Push agency down, inside a frame',
-            hint: 'Information (only those who know can decide), Strategy (the frame that prevents chaos at speed), Decision Architecture (what replaces Scrum\'s gates). All three live in the team.',
+            text: 'Agency needs to be pushed down, create the right environment',
+            hint: 'Information (only those who know can decide), Strategy (the frame that prevents chaos at speed), Decision Architecture (what replaces Scrum\'s gates). All three must live in the team.',
           },
           {
-            text: 'The roles blur',
-            hint: 'Form intent, decide what matters, ship by afternoon. Discovery is the job an agent cannot do, and it is becoming yours.',
+            text: 'Embrace blurring roles',
+            hint: 'Discovery is the job an agent cannot do, and it is partly becoming yours.',
           },
         ]}
         footer="You do not need permission to start. Stop outsourcing discovery to one PM. Agree what you do the moment a decision is blocked."
@@ -220,39 +252,23 @@ export const slides: SlideDef[] = [
     steps: 3,
   },
 
-  /* 11 — FINN: the restructure, already happened. Quote + reveal of the model.
+  /* 12 — FINN: the restructure, already happening. Quote + reveal of the model.
    * Source: Andreas Stryz (CTO, FINN), LinkedIn, 2026
    * https://www.linkedin.com/posts/andreasstryz_engineeringleadership-ai-orgdesign-share-7455542713841565696-YLA1/ */
   {
     node: (
       <Quote
-        eyebrow="This already happened"
+        eyebrow="Already happening, in the wild"
         quote={<>Scrum was a buffer for when code was expensive. I killed it.</>}
         attribution="Andreas Stryz, CTO at FINN, 2026"
-        punchline="Micro teams. One PM, a few engineers. Each owns one KPI, not a backlog."
+        punchline="Micro teams. One PM, two product engineers. Each team owns one KPI, not a backlog."
         stepped
       />
     ),
     steps: 1,
   },
 
-  /* 11.5 — Notion: agency in action. You don't need permission to shape your domain.
-   * Source: Max Schoening (Head of Product, Notion), Lenny's Podcast, May 2026
-   * https://www.lennysnewsletter.com/p/why-cultivating-agency-matters-more */
-  {
-    node: (
-      <Quote
-        eyebrow="Agency in action"
-        quote={<>Do you drive Notion like it's stolen?</>}
-        attribution="Max Schoening, Head of Product at Notion"
-        punchline="You don't own it officially. But you move like you do. Decisions in your domain are yours to own."
-        stepped
-      />
-    ),
-    steps: 1,
-  },
-
-  /* 12 — what's yours vs what isn't: agency first, then the wall */
+  /* 13 — what's yours vs what isn't: agency first, then the wall */
   <Boxes
     eyebrow="Why this is hard"
     title="What is yours, and what is not."
@@ -262,34 +278,55 @@ export const slides: SlideDef[] = [
         tone: 'green',
         label: 'Yours, on Monday',
         title: 'Your team',
-        text: 'Build discovery in. Agree how you act when a decision is blocked. Prove it on one team, with a number that moved. Nobody upstairs has to approve that.',
+        text: 'Build discovery in. Agree how you act when a decision is blocked. Prove it on your team, with a business KPI that moved. Nobody upstairs has to approve that.',
       },
       {
         tone: 'amber',
         label: 'Org-level conversations',
         title: 'Strategy & Authority',
-        text: 'You can redesign your team\'s decision architecture (move discovery from PM to team). You cannot change the org\'s authority structure or strategy from inside your team. That takes conversations with people above you.',
+        text: 'You can redesign your team\'s decision architecture. You cannot change the org\'s authority structure or strategy from inside your team. That takes conversations with people above you.',
       },
     ]}
     footer="The frustration when a good idea dies in an approval queue is not noise. It is data. It points at the structure that has to change."
   />,
 
-  /* 13 — what this is: hycle, an open inquiry. The closing call to action. */
+  /* 14 — Notion: where authority is fuzzy, take ownership anyway. Follows the
+   * "what is yours" wall as the answer to it.
+   * Source: Max Schoening (Head of Product, Notion), Lenny's Podcast, May 2026
+   * https://www.lennysnewsletter.com/p/why-cultivating-agency-matters-more */
+  {
+    node: (
+      <Quote
+        eyebrow="So take ownership"
+        quote={<>Do you drive Notion like it's stolen?</>}
+        attribution="Max Schoening, Head of Product at Notion"
+        punchline="You may not own it officially. Move like you do. The decisions in your domain are yours to take."
+        stepped
+      />
+    ),
+    steps: 1,
+  },
+
+  /* 15 — what this is: hycle, an open inquiry. Lands the name late, as a release
+   * after the argument is won, and unpacks the pun (hypercycle / heikel / hype
+   * cycle). Drawn from hycle.org; sets up the close (slide 17). */
   <Statement
-    eyebrow="Where this comes from"
+    eyebrow="Where these thoughts come from"
     sub={
       <>
-        Work in progress. We are learning what's working for different orgs, what isn't, and why. Not a blueprint
-        to copy. Come help us figure out what works for <Accent>you</Accent>. <Accent>hycle.org</Accent>.
+        An open inquiry into how organizations change when execution stops being the bottleneck. Three words hide
+        in the name. <Accent>Hypercycle</Accent>: coupled cycles that feed each other, the pattern that carried life
+        from chemistry to biology. In German it sounds like <Accent>heikel</Accent>, delicate; reorganizing usually
+        is. And <Accent>hype cycle</Accent> is in there too, for what stays once the hype is gone. <Accent>hycle.org</Accent>.
       </>
     }
   >
     hycle
   </Statement>,
 
-  /* 14 — the three questions for the pod block */
+  /* 16 — the three questions for the pod block */
   <NumberedList
-    eyebrow="Before Nermin, sit with three questions"
+    eyebrow="Three thoughts to take into the afternoon"
     title="For your own organization"
     items={[
       {
@@ -307,8 +344,15 @@ export const slides: SlideDef[] = [
     ]}
   />,
 
-  /* 15 — close + handoff */
-  <Statement sub="Now go change the organization that decides what it builds. Nermin, over to you.">
+  /* 17 — close */
+  <Statement
+    sub={
+      <>
+        Now go change the organization that decides what it builds, and share your failures and successes with us
+        at <Accent>hycle.org</Accent>.
+      </>
+    }
+  >
     You built the factory.
   </Statement>,
 ]

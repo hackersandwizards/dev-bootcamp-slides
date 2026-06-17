@@ -220,6 +220,16 @@ body {
   max-width: 90%;
 }
 
+/* a single line that reveals under a statement and carries the weight */
+.frame .statement-standout {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 34px;
+  color: var(--primary-deep);
+  max-width: 90%;
+  margin: 40px 0 0;
+}
+
 /* big date */
 .bigdate {
   align-items: center;
