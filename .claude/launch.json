@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "keynote",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "--cwd", "modules/keynote", "dev", "--port", "5199", "--strictPort"],
+      "port": 5199,
+      "autoPort": false
+    },
+    {
+      "name": "factory-retro",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "--cwd", "modules/factory-retro", "dev", "--port", "5198", "--strictPort"],
+      "port": 5198,
+      "autoPort": false
+    },
+    {
+      "name": "agenda",
+      "runtimeExecutable": "bun",
+      "runtimeArgs": ["run", "--cwd", "modules/agenda", "dev", "--port", "5197", "--strictPort"],
+      "port": 5197,
+      "autoPort": false
+    }
+  ]
+}
