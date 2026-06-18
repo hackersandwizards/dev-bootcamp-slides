@@ -51,7 +51,9 @@ const serveStatic = (dir) =>
   })
 
 async function exportTs(dir, out) {
-  execFileSync('bunx', ['vite', 'build', '--base', './', '--outDir', 'dist'], { cwd: dir, stdio: 'inherit' })
+  execFileSync('bun', ['install'], { cwd: dir, stdio: 'inherit' })
+  const viteBin = path.join(dir, 'node_modules', '.bin', 'vite')
+  execFileSync(viteBin, ['build', '--base', './', '--outDir', 'dist'], { cwd: dir, stdio: 'inherit' })
   const server = await serveStatic(path.join(dir, 'dist'))
   const port = server.address().port
   let chromium
