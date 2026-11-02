@@ -1,51 +1,44 @@
 # Developer Bootcamp Hamburg, slides & materials
 
-Slides and exercise materials for the alphalist Agentic Engineering DEV Bootcamp, June 16-17, 2026, Jufa Hotel Hamburg. Built by hackers & wizards.
+Slides and exercise materials from the alphalist Agentic Engineering DEV Bootcamp, June 16-17, 2026, Jufa Hotel Hamburg. Built by hackers&wizards. The hands-on exercise code is in [dev-bootcamp-factory-workshop](https://github.com/hackersandwizards/dev-bootcamp-factory-workshop).
 
-## Quick start
+## Read the decks
 
-Needs [Bun](https://bun.sh) (`curl -fsSL https://bun.sh/install | bash`).
+- Online: the [site root](https://hackersandwizards.github.io/dev-bootcamp-slides/) lists every deck, each at its own subpath, such as the [keynote](https://hackersandwizards.github.io/dev-bootcamp-slides/keynote/). Append `#/print` to a deck's URL to see every slide at once.
+- As PDF: [`pdfs/`](pdfs/) holds every deck but the agenda.
+
+## Run a deck locally
+
+Needs Node.js 22 or newer and [Bun](https://bun.sh) 1.2 or newer (`curl -fsSL https://bun.sh/install | bash` installs Bun).
 
 ```bash
 bun install
-bun run --cwd modules/keynote dev     # work on the keynote
-bun run --cwd templates/slidev dev    # see the Slidev template deck
-bun run --cwd templates/ts dev        # see the TS template deck
+bun run --cwd modules/keynote dev     # any folder under modules/ works the same
 ```
 
 ## Repo map
 
 | Path | What lives there |
 |------|------------------|
-| `modules/` | One folder per topic (keynote, foundation, pipeline, factory-retro, hycle, agenda): `module.json` with the agenda sessions it covers, deck, exercises |
-| `brand/` | Design tokens, fonts, h&w logos, the shared Slidev theme |
+| `modules/` | One folder per session: keynote, foundation, pipeline, factory-retro, hycle, agenda, reflect-commit. Each is a Vite + React deck, most with a README of the agenda sessions it covers and an `exercises/` brief |
+| `pdfs/` | The exported decks |
+| `brand/` | Design tokens, fonts, logos, the Slidev theme |
 | `templates/` | Deck starters: `slidev/` and `ts/` (Vite + React) |
-| `scripts/` | Scaffolding, site build, PDF export |
-| `site/` | Generated output, gitignored |
+| `scripts/` | `new-module.mjs` (new deck from a template), `export-pdf.mjs` (deck to PDF) |
+| `facilitation-guides/` | Day 1 and Day 2 briefs for the facilitators |
 
-## Add a deck to a module
+## Add or export a deck
 
 ```bash
-bun run new foundation slidev
+bun run new <slug> ts          # or slidev: copies a template into modules/<slug>
 bun install
+node scripts/export-pdf.mjs <slug>   # builds a TS deck and prints it to pdfs/<slug>.pdf
 ```
 
-Each module picks its own format. Pick Slidev to write markdown fast. Pick TS when the deck needs bespoke visuals and an agent does most of the editing. Both read the shared style from `brand/`, so the decks look like one event.
+The exporter needs Playwright's Chromium once: `bun add -d playwright-chromium && bun pm trust playwright-chromium`. Every push to `main` that touches `modules/` or `brand/` redeploys the decks to GitHub Pages.
 
-## Share a deck
+## Pod materials and style
 
-Present from the dev server, share the live link, or hand out files per deck:
+[FACILITATION.md](FACILITATION.md) defines the facilitator role and the format every exercise follows: goal, timeboxed steps, expected outcome, reflection prompts.
 
-- TS decks are live on GitHub Pages, each at its own subpath, redeployed on every push to `main`. The keynote: **https://hackersandwizards.github.io/dev-bootcamp-slides/keynote/** (append `#/print` to see every slide at once). The [site root](https://hackersandwizards.github.io/dev-bootcamp-slides/) lists all deployed decks.
-- Slidev decks export to PDF with `bun run --cwd modules/<slug> export` (one-time setup: `bun add -d playwright-chromium && bun pm trust playwright-chromium`).
-- TS decks print to PDF from the browser: open the deck with `#/print` appended to the URL and print.
-
-A combined site or PDF bundle for participants comes later, after the content exists.
-
-## Pod materials
-
-[FACILITATION.md](FACILITATION.md) defines the facilitator role and the format every exercise follows: goal, timeboxed steps, expected outcome, reflection prompts. Read it before building pod activities.
-
-## Style
-
-One source of truth: [brand/tokens.css](brand/tokens.css). Use the variables, never raw hex values in decks. Rationale and usage notes: [brand/README.md](brand/README.md).
+Colours and fonts come from [brand/tokens.css](brand/tokens.css): use the variables, never raw hex values in decks. Rationale and usage notes: [brand/README.md](brand/README.md).
