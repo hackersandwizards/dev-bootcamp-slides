@@ -1,5 +1,7 @@
 # Developer Bootcamp Hamburg, slides & materials
 
+> **Archived.** The decks and the facilitation guides now live in hackers&wizards' private trainer-hub, as the delivery `software-factory/deliveries/2026-06-alphalist-dev-bootcamp` on its slides engine. This repository stays as it was on the day of the move and gets no further changes.
+
 Slides and exercise materials from the alphalist Agentic Engineering DEV Bootcamp, June 16-17, 2026, Jufa Hotel Hamburg. Built by hackers&wizards. The hands-on exercise code is in [dev-bootcamp-factory-workshop](https://github.com/hackersandwizards/dev-bootcamp-factory-workshop).
 
 ## Read the decks
